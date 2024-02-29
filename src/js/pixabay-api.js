@@ -5,11 +5,9 @@ export function getPhotos() {
   fetch(LINK)
     .then(response => {
       if (!response.ok) {
-      throw new Error('Image error!');
-    }
-    return response.json();
+        throw new Error('Image error!'); // response.statusText
+      }
+      return response.json();
     })
-    .then(data => {
-      const images = data.hits.slice(0, 9);
-  })
+    .then(data => console.log(data).catch(error => console.log(error))); // const images = data.hits.slice(0, 9);
 };
