@@ -9,5 +9,13 @@ export function getPhotos() {
       }
       return response.json();
     })
-    .then(data => console.log(data).catch(error => console.log(error))); // const images = data.hits.slice(0, 9);
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.log(error);
+   }) // const images = data.hits.slice(0, 9);
+  
 };
+
+

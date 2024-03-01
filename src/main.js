@@ -22,3 +22,5 @@ import { createMarkup } from "./js/render-functions";
 * щоб користувач не міг відправити запит, якщо поле пошуку порожнє.
 **/
 
+const loader = document.querySelector('.loader');
+console.log(loader);
