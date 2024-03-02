@@ -11,7 +11,7 @@ import { getPhotos } from "./js/pixabay-api";
 import { createMarkup } from "./js/render-functions";
 
 const KEY = '42641678-dfe8c371983b31bc21d252361';
-const BASE_URI = 'https://pixabay.com/api1/';
+const BASE_URI = 'https://pixabay.com/api/';
 const QUERY = 'forest+mountains'
 const LINK = `${BASE_URI}?key=${KEY}&q=${QUERY}`;
 
@@ -23,22 +23,18 @@ function getImages() {
       }
       return response.json();
     })
+    .then(data => {
+      console.log(data);
+    })
     .catch(error => {
-      alert('Error while fetching from pixabay!')
+      console.log(error);
     });
 };
 
-getImages()
-  .then(data => {
-    const images = data.hits.slice(0, 3);
-    console.log(images);
-  })
+getImages();
 
 
-
-
-
-
+// Форма подія сабміт в мейні
 
 
 

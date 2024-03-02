@@ -33,3 +33,17 @@ input {
   color: #808080;
   background: #fff;
 }
+
+.list-images {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}

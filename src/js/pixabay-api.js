@@ -18,4 +18,10 @@ export function getPhotos() {
   
 };
 
-
+const request = {
+  key: '42641678-dfe8c371983b31bc21d252361',
+  q: '',
+  image_type: 'photo',
+  orientation: 'horizontal',
+  safesearch: true,
+};

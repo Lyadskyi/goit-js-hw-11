@@ -8,12 +8,21 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-
-    <input type="text" id="search-images" />
-    <button type="button" data-start>Search</button>
-
-    <span class="loader"></span>
+    <section class="list-images">
+      <input
+        type="text"
+        id="search-images"
+        placeholder="Search images..."
+        autofocus
+      />
+      <button type="button" data-start>Search</button>
+    </section>
+    <div class="gallery">
+      <span class="loader"></span>
+    </div>
 
     <script type="module" src="./main.js"></script>
   </body>
 </html>
+
+<!-- <span class="loader isVisible"></span> -->
