@@ -7,26 +7,26 @@
     <title>goit-js-hw-11</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-db7463ae.js">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-cf6910df.css">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-82084f98.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-38388549.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-a51daae5.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-d93fd7ef.css">
   </head>
   <body>
-    <section class="list-images">
-      <input
-        type="text"
-        id="search-images"
-        placeholder="Search images..."
-        autofocus
-      />
-      <button type="button" data-start>Search</button>
+    <section class="search-images">
+      <form class="form">
+        <input
+          type="text"
+          name="message"
+          placeholder="Search images..."
+          autofocus
+        />
+        <button type="button" data-start>Search</button>
+      </form>
     </section>
     <div class="gallery">
-      <span class="loader"></span>
+      <ul class="image-gallery"></ul>
     </div>
 
     
   </body>
 </html>
-
-<!-- <span class="loader isVisible"></span> -->
