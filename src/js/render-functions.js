@@ -2,9 +2,15 @@
 // 2. Пробігається методом map() або reduce(), повертає розмітку
 // 3. За допомогою метода join() об'єднує в рядок
 
+const gallery = document.querySelector(".gallery");
+console.log(gallery)
+
 export function createMarkup(param) {
   
 };
+
+
+
 
 // function appendArticlesMarkup(articles) {
 //   const markup = articles

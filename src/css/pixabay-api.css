@@ -34,12 +34,12 @@ input {
   background: #fff;
 }
 
-.list-images {
+.search-images {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 36px;
 }
 
 .gallery{
