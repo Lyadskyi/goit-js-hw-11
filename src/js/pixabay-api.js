@@ -7,39 +7,60 @@ const QUERY = "forest+mountains"
 const LINK = `${BASE_URI}?key=${KEY}&q=${QUERY}`;
 
 
-export function getPhotos() {
-  fetch(LINK)
+
+
+
+
+
+
+import iziToast from "izitoast";
+
+import "izitoast/dist/css/iziToast.min.css";
+
+import octagon from "../img/x-octagon.svg"
+
+import { gallery } from '../main';
+
+const pick = {
+  captionsData: 'alt',
+  captionDelay: 250
+};
+
+const lightbox = new SimpleLightbox('.image-gallery a', pick);
+
+export function requestToServer(link) {
+  return fetch(link)
     .then(response => {
       if (!response.ok) {
-        throw new Error(`Response error with status: ${response.status}`);
+        throw new Error(`Image error with status ${response.statusText}`);
       }
       return response.json();
     })
     .then(data => {
-
-      let html = '';
-      for (let { hits } of data) {
-  
-}
-
-
-
-
+      if (data.hits.length === 0) {
+        iziToast.error({
+          title: 'Error',
+          titleColor: '#fff',
+          titleSize: '16px',
+          titleLineHeight: '1.5',
+          message: 'Sorry, there are no images matching your search query. Please try again!',
+          messageColor: '#fafafb',
+          messageSize: '16px',
+          messageLineHeight: '1.5',
+          backgroundColor: '#ef4040',
+          theme: 'dark',
+          iconUrl: octagon,
+          iconColor: '#fafafb',
+          closeOnEscape: true,
+          maxWidth: '432px',
+          position: 'topRight',
+        });
+        gallery.innerHTML = '';
+      }
+      createMarkup(data);
+      return lightbox.refresh();
     })
     .catch(error => {
-      alert("Incorrect request :(")
-  });
+      console.log(error);
+    })
 };
-
-getPhotos();
-
-
-
-
-// const request = {
-//   key: "42641678-dfe8c371983b31bc21d252361",
-//   q: "",
-//   image_type: "photo",
-//   orientation: "horizontal",
-//   safesearch: true,
-// };
