@@ -4,7 +4,7 @@ import SimpleLightbox from "simplelightbox";
 
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-import { getPhotos } from "./js/pixabay-api"; // import { getImages } from './js/render-functions';
+import { requestToServer } from "./js/pixabay-api"; // import { getImages } from './js/render-functions';
 
 import { createMarkup } from "./js/render-functions";
 
@@ -28,5 +28,5 @@ form.addEventListener('submit', event => {
   request.q = input.value;
   url += new URLSearchParams(request);
   input.value = '';
-  getPhotos(url);
+  requestToServer(url);
 });
