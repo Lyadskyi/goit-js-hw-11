@@ -1,38 +1,31 @@
 // 1. Створюємо функцію для HTTP-запитів, яка створює запит на сервер
-// 2. Створюємо константи зі всіма параметрами та ключем (буде export)
-
-const KEY = "42641678-dfe8c371983b31bc21d252361";
-const BASE_URI = "https://pixabay.com/api/";
-const QUERY = "forest+mountains"
-const LINK = `${BASE_URI}?key=${KEY}&q=${QUERY}`;
-
-
-
-
-
-
-
 
 import iziToast from "izitoast";
 
 import "izitoast/dist/css/iziToast.min.css";
 
-import octagon from "../img/x-octagon.svg"
+import SimpleLightbox from "simplelightbox";
 
-import { gallery } from '../main';
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+import { galleryImages } from '../main';
+
+import { createMarkup } from "../js/render-functions";
+
+import octagon from "../img/x-octagon.svg"
 
 const pick = {
   captionsData: 'alt',
   captionDelay: 250
 };
 
-const lightbox = new SimpleLightbox('.image-gallery a', pick);
+const lightbox = new SimpleLightbox('.gallery-image a', pick);
 
 export function requestToServer(link) {
   return fetch(link)
     .then(response => {
       if (!response.ok) {
-        throw new Error(`Image error with status ${response.statusText}`);
+        throw new Error('Image error');
       }
       return response.json();
     })
@@ -55,12 +48,12 @@ export function requestToServer(link) {
           maxWidth: '432px',
           position: 'topRight',
         });
-        gallery.innerHTML = '';
+        galleryImages.innerHTML = '';
       }
       createMarkup(data);
       return lightbox.refresh();
     })
     .catch(error => {
       console.log(error);
-    })
-};
+    });
+}

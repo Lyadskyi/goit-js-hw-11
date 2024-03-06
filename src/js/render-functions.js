@@ -1,8 +1,6 @@
 // 1. Створюємо функцію для відображення елементів інтерфейсу, яка приймає параметром масив, який буде огортати бекенд
-// 2. Пробігається методом map() або reduce(), повертає розмітку
-// 3. За допомогою метода join() об'єднує в рядок
 
-import { gallery } from '../main';
+import { galleryImages } from '../main';
 
 export function createMarkup(data) {
   let markupImages = data.hits
@@ -45,6 +43,6 @@ export function createMarkup(data) {
     </ul>
   </div>
 </li>`;
-    }).join();
-  return (gallery.innerHTML = markupImages);
+    }).join("");
+  return (galleryImages.innerHTML = markupImages);
 };

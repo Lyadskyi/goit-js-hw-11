@@ -1,16 +1,8 @@
+import { requestToServer } from "./js/pixabay-api";
 
-
-import SimpleLightbox from "simplelightbox";
-
-import "simplelightbox/dist/simple-lightbox.min.css";
-
-import { requestToServer } from "./js/pixabay-api"; // import { getImages } from './js/render-functions';
-
-import { createMarkup } from "./js/render-functions";
-
-const form = document.querySelector('.form');
-const input = document.querySelector('input[name=message]');
-export const gallery = document.querySelector('.image-gallery');
+const formEl = document.querySelector('.form');
+const inputEl = document.querySelector('input');
+export const galleryImages = document.querySelector('.gallery-images');
 
 const request = {
   key: '42641678-dfe8c371983b31bc21d252361',
@@ -22,11 +14,11 @@ const request = {
 
 let url = 'https://pixabay.com/api/?';
 
-form.addEventListener('submit', event => {
+formEl.addEventListener('submit', event => {
   event.preventDefault();
-  gallery.innerHTML = '<span class="loader"></span>';
-  request.q = input.value;
+  galleryImages.innerHTML = '<span class="loader"></span>';
+  request.q = inputEl.value;
   url += new URLSearchParams(request);
-  input.value = '';
+  inputEl.value = '';
   requestToServer(url);
 });

@@ -1,23 +1,9 @@
-button {
-  border-radius: 8px;
-  padding: 8px 16px;
-  width: 91px;
-  background: #4e75ff;
-  font-family: 'Montserrat', sans-serif;
-  /* font-weight: 500; */
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #fff;
-}
-
-button {
-  border: none;
-  outline: none;
-}
-
-button:hover {
-  background: #6c8cff;
+.search-images {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 36px;
 }
 
 input {
@@ -34,16 +20,38 @@ input {
   background: #fff;
 }
 
-.search-images {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 8px;
-  margin-top: 36px;
+input::placeholder {
+  font-size: 16px;
 }
 
-.gallery{
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
+input:hover {
+  border: 1px solid #000;
+  outline: transparent;
+}
+
+input:focus {
+  border: 1px solid #4e75ff;
+  outline: transparent;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  background: #4e75ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  background: #6c8cff;
 }
