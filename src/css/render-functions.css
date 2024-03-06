@@ -8,6 +8,7 @@
 
 .gallery-image {
   border: 1px solid #808080;
+  border-radius: 5px;
 }
 
 .list-image {
@@ -19,6 +20,14 @@
 .image {
   width: 360px;
   height: 200px;
+}
+
+.wrapper-image {
+  overflow: hidden;
+}
+
+.wrapper-image:hover img {
+  transform: scale(1.15);
 }
 
 .list-image-heading {
