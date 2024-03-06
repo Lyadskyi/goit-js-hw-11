@@ -1,7 +1,7 @@
 import { requestToServer } from "./js/pixabay-api";
 
 const formEl = document.querySelector('.form');
-const inputEl = document.querySelector('input');
+const inputEl = document.querySelector('input[name=message]');
 export const galleryImages = document.querySelector('.gallery-images');
 
 const request = {
